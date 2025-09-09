@@ -92,7 +92,7 @@ export const HomePage = () => {
     {
       icon: Shield,
       title: 'Privacy-First Architecture',
-      description: 'Your financial data never leaves your device. All calculations and AI processing happen locally, ensuring complete privacy and security without compromising on functionality.',
+      description: 'Your financial data never leaves your device. All calculations and AI processing happen securely on our backend. We never save or store your data, ensuring complete privacy without compromising functionality',
       highlights: ['Local data storage', 'No server uploads', 'Encrypted backups', 'GDPR compliant'],
       image: 'privary.png'
     }
