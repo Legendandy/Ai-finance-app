@@ -23,19 +23,18 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/onboarding" element={<Onboarding />} />
           
-          {isOnboarded ? (
-            <>
-              <Route path="/dashboard" element={<Layout><Dashboard /></Layout>} />
-              <Route path="/transactions" element={<Layout><Transactions /></Layout>} />
-              <Route path="/budget" element={<Layout><Budget /></Layout>} />
-              <Route path="/invoices" element={<Layout><Invoices /></Layout>} />
-              <Route path="/predictions" element={<Layout><Predictions /></Layout>} />
-              <Route path="/settings" element={<Layout><Settings /></Layout>} />
-              <Route path="*" element={<Navigate to="/dashboard" replace />} />
-            </>
-          ) : (
-            <Route path="*" element={<Navigate to="/onboarding" replace />} />
-          )}
+          {/* Always define these routes, but protect them individually */}
+          <Route path="/dashboard" element={<Layout><Dashboard /></Layout>} />
+          <Route path="/transactions" element={<Layout><Transactions /></Layout>} />
+          <Route path="/budget" element={<Layout><Budget /></Layout>} />
+          <Route path="/invoices" element={<Layout><Invoices /></Layout>} />
+          <Route path="/predictions" element={<Layout><Predictions /></Layout>} />
+          <Route path="/settings" element={<Layout><Settings /></Layout>} />
+          
+          {/* Default redirects */}
+          <Route path="*" element={
+            <Navigate to={isOnboarded ? "/dashboard" : "/onboarding"} replace />
+          } />
         </Routes>
       </div>
     </Router>
